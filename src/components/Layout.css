@@ -1,0 +1,86 @@
+/* Layout Container */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--base-200);
+}
+
+/* Main Content Area */
+.layout-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Desktop: Adiciona margem para o sidebar */
+@media (min-width: 1024px) {
+  .layout-content {
+    margin-left: 16rem;
+  }
+}
+
+/* Mobile Navbar */
+.layout-navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--base-100);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+@media (min-width: 1024px) {
+  .layout-navbar {
+    display: none;
+  }
+}
+
+.layout-navbar-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  color: var(--base-content);
+  transition: var(--transition);
+}
+
+.layout-navbar-menu-btn:hover {
+  background-color: var(--base-200);
+}
+
+.layout-navbar-title {
+  flex: 1;
+  margin-left: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Main Content */
+.layout-main {
+  flex: 1;
+  padding: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .layout-main {
+    padding: 2rem;
+  }
+}
+
+/* Loading State */
+.layout-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--base-200);
+}
