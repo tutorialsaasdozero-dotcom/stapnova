@@ -1,70 +1,194 @@
-# Getting Started with Create React App
+# StapNova - CRM para Fundadores de Startup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um SaaS CRM completo com Pipeline Kanban, desenvolvido com React, Supabase e DaisyUI.
 
-## Available Scripts
+## 🚀 Funcionalidades
 
-In the project directory, you can run:
+- ✅ **Autenticação completa** (Login/Cadastro)
+- 📊 **Dashboard** com métricas e estatísticas
+- 🎯 **Pipeline Kanban** para gerenciar leads
+- 👥 **Gestão de Leads** com busca e filtros
+- 👤 **Perfil de usuário** editável
+- 🌓 **Tema claro/escuro**
+- 📱 **Design responsivo**
 
-### `npm start`
+## 🎨 Tecnologias
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React** - Framework frontend
+- **Supabase** - Backend e autenticação
+- **DaisyUI** - Componentes UI
+- **Tailwind CSS** - Estilização
+- **React Router** - Navegação
+- **React Icons** - Ícones
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Pré-requisitos
 
-### `npm test`
+- Node.js (v14 ou superior)
+- Conta no Supabase
+- npm ou yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔧 Configuração
 
-### `npm run build`
+### 1. Clone o repositório
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+cd stapnova
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Instale as dependências
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+### 3. Configure o Supabase
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Crie uma conta em [supabase.com](https://supabase.com)
+2. Crie um novo projeto
+3. Execute o SQL do arquivo `supabase_schema.sql` no SQL Editor do Supabase
+4. Copie as credenciais do projeto (URL e Anon Key)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. Configure as variáveis de ambiente
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Crie um arquivo `.env` na raiz do projeto `stapnova`:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```env
+REACT_APP_SUPABASE_URL=sua_url_do_supabase
+REACT_APP_SUPABASE_ANON_KEY=sua_chave_anon_do_supabase
+```
 
-## Learn More
+**Onde encontrar as credenciais:**
+- Acesse seu projeto no Supabase
+- Vá em Settings > API
+- Copie a `Project URL` e a `anon public` key
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 5. Inicie o servidor de desenvolvimento
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+O aplicativo estará disponível em `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📱 Estrutura do Projeto
 
-### Analyzing the Bundle Size
+```
+stapnova/
+├── src/
+│   ├── components/       # Componentes reutilizáveis
+│   │   ├── Layout.js     # Layout principal com sidebar
+│   │   └── Sidebar.js    # Menu lateral
+│   ├── contexts/         # Contextos React
+│   │   ├── AuthContext.js    # Autenticação
+│   │   └── ThemeContext.js   # Tema claro/escuro
+│   ├── pages/            # Páginas da aplicação
+│   │   ├── Login.js      # Página de login
+│   │   ├── Cadastro.js   # Página de cadastro
+│   │   ├── Dashboard.js  # Dashboard principal
+│   │   ├── Kanban.js     # Pipeline Kanban
+│   │   ├── Leads.js      # Listagem de leads
+│   │   └── Perfil.js     # Perfil do usuário
+│   ├── config/           # Configurações
+│   │   └── supabase.js   # Cliente Supabase
+│   ├── App.js            # Componente principal
+│   └── index.js          # Ponto de entrada
+├── public/               # Arquivos públicos
+└── package.json          # Dependências
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🎯 Como Usar
 
-### Making a Progressive Web App
+### Primeiro Acesso
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Acesse `http://localhost:3000`
+2. Clique em "Cadastre-se"
+3. Preencha seus dados e crie uma conta
+4. Você será redirecionado para o Dashboard
 
-### Advanced Configuration
+### Dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Visualize métricas importantes:
+  - Usuários testando
+  - Clientes convertidos
+  - Taxa de conversão
+  - Total de leads
+- Veja os leads mais recentes
 
-### Deployment
+### Pipeline Kanban
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Visualize leads organizados por estágio:
+  - **Conversando** - Acabou de manifestar interesse
+  - **Demo Agendada** - Vai ver o produto
+  - **Testando** - Está no trial/beta
+  - **Cliente** - Converteu (pagando)
+- Clique em "Novo Lead" para adicionar
+- Arraste leads entre colunas ou use o seletor de estágio
+- Edite ou exclua leads pelo menu (•••)
 
-### `npm run build` fails to minify
+### Leads
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Visualize todos os leads em formato de tabela
+- Use a busca para encontrar leads específicos
+- Filtre por estágio
+- Adicione, edite ou exclua leads
+
+### Perfil
+
+- Atualize suas informações pessoais
+- Altere nome, empresa e telefone
+- Visualize informações da conta
+
+### Tema
+
+- Alterne entre tema claro e escuro
+- Clique no botão de tema na sidebar
+- A preferência é salva automaticamente
+
+## 🔒 Segurança
+
+- Autenticação via Supabase Auth
+- Row Level Security (RLS) habilitado
+- Cada usuário só acessa seus próprios dados
+- Senhas criptografadas
+
+## 🚀 Deploy
+
+### Vercel (Recomendado)
+
+1. Instale a CLI da Vercel:
+```bash
+npm i -g vercel
+```
+
+2. Faça o deploy:
+```bash
+vercel
+```
+
+3. Configure as variáveis de ambiente no painel da Vercel:
+   - `REACT_APP_SUPABASE_URL`
+   - `REACT_APP_SUPABASE_ANON_KEY`
+
+### Outras Plataformas
+
+O projeto pode ser deployado em qualquer plataforma que suporte React:
+- Netlify
+- GitHub Pages
+- AWS Amplify
+- Firebase Hosting
+
+## 📝 Licença
+
+Este projeto é de código aberto e está disponível sob a licença MIT.
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+
+## 📧 Suporte
+
+Para dúvidas ou suporte, abra uma issue no repositório.
+
+---
+
+Desenvolvido com ❤️ para fundadores de startups
